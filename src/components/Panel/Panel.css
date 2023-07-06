@@ -1,0 +1,10 @@
+.panel{
+  width: 75px;
+  height: 450px;
+  display: grid;
+ 
+  
+}
+.item-panel{
+  background-color: var(--tomato);
+}
