@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { React, useContext } from 'react'
+import { AppContext } from '../../App'
 import './Panel.css'
 
 const Panel = () => {
-  const [selectedBackground, setSelectedBackground] = useState('yellow')
-  
+  const { selectedBackground, setSelectedBackground } = useContext(AppContext)
   return (
     <div className='panel'>
       <div className='item item-panel'>
@@ -17,21 +17,21 @@ const Panel = () => {
         <div
           className='circle'
           style={{ background: 'blue' }}
-          onClick={(e)=>setSelectedBackground(e.target.style.background)}
+          onClick={(e) => setSelectedBackground(e.target.style.background)}
         ></div>
       </div>
       <div className='item item-panel'>
         <div
           className='circle'
           style={{ background: 'green' }}
-          onClick={(e)=>setSelectedBackground(e.target.style.background)}
+          onClick={(e) => setSelectedBackground(e.target.style.background)}
         ></div>
       </div>
       <div className='item item-panel'>
         <div
           className='circle'
           style={{ background: 'yellow' }}
-          onClick={(e)=>setSelectedBackground(e.target.style.background)}
+          onClick={(e) => setSelectedBackground(e.target.style.background)}
         ></div>
       </div>
     </div>
