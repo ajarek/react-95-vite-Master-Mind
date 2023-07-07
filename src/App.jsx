@@ -3,7 +3,7 @@ import Panel from './components/Panel/Panel'
 import { createContext, useState } from 'react'
 export const AppContext = createContext()
 function App() {
-  const [selectedBackground, setSelectedBackground] = useState('yellow')
+  const [selectedBackground, setSelectedBackground] = useState('')
 
   return (
     <div style={{display:'flex', justifyContent:'space-evenly', width:'100%'}}>
