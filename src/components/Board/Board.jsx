@@ -1,6 +1,6 @@
 import { React, useContext, useEffect, useState } from 'react'
 import { AppContext } from '../../App'
-
+import _ from 'lodash';
 import { ColorRandom } from '../../helper/ColorRandom'
 import { compareArray } from '../../helper/compareArray'
 import './Board.css'
@@ -11,6 +11,7 @@ const Board = () => {
     setSelectedBackground,
     arrayAllInfo,
     setArrayAllInfo,
+    counter, setCounter
   } = useContext(AppContext)
   const [arraySelectedColors, setArraySelectedColors] = useState([])
   const [arrayRandomColors, setArrayRandomColors] = useState(ColorRandom())
@@ -30,12 +31,20 @@ const Board = () => {
     if (arrayInfo[3] !== '') {
       arrayAllInfo.push(arrayInfo)
     }
+    if ( _.isEqual(arrayInfo,['black','black','black','black'])===true) {
+      alert('You guessed')
+    }
   })
   useEffect(() => {
     if (arraySelectedColors.length === 4) {
       setArraySelectedColors([])
     }
   }, [arraySelectedColors])
+  useEffect(() => {
+    if (arraySelectedColors.length === 4) {
+    setCounter(counter+1)
+    }
+  })
 
   return (
     <div className='board'>

@@ -8,11 +8,13 @@ const PanelInfo = () => {
     setSelectedBackground,
     arrayAllInfo,
     setArrayAllInfo,
+    counter, setCounter
   } = useContext(AppContext)
   return (
     <div className='panel-info'>
       <div className='item'>
         {arrayAllInfo[0]?.map((item, ind) => {
+          counter
           return (
             <div
               key={ind}

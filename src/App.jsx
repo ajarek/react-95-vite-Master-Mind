@@ -6,11 +6,12 @@ export const AppContext = createContext()
 function App() {
   const [selectedBackground, setSelectedBackground] = useState('')
   const [arrayAllInfo, setArrayAllInfo] = useState([])
+  const [counter, setCounter] = useState(0)
 
   return (
     <div style={{display:'flex', justifyContent:'space-evenly', width:'100%'}}>
         <AppContext.Provider
-        value={{selectedBackground, setSelectedBackground, arrayAllInfo, setArrayAllInfo}}>
+        value={{selectedBackground, setSelectedBackground, arrayAllInfo, setArrayAllInfo,counter, setCounter}}>
       <Board/>
       <PanelInfo/>
       <Panel/>
