@@ -1,17 +1,20 @@
 import { React, useContext, useEffect, useState } from 'react'
 import { AppContext } from '../../App'
 
-import {ColorRandom} from '../../helper/ColorRandom'
-import {compareArray} from '../../helper/compareArray'
+import { ColorRandom } from '../../helper/ColorRandom'
+import { compareArray } from '../../helper/compareArray'
 import './Board.css'
 const array = new Array(32).fill('')
 const Board = () => {
-  const { selectedBackground, setSelectedBackground, arrayAllInfo, setArrayAllInfo } = useContext(AppContext)
+  const {
+    selectedBackground,
+    setSelectedBackground,
+    arrayAllInfo,
+    setArrayAllInfo,
+  } = useContext(AppContext)
   const [arraySelectedColors, setArraySelectedColors] = useState([])
   const [arrayRandomColors, setArrayRandomColors] = useState(ColorRandom())
-  
 
-  
   const addColors = (e) => {
     if (arraySelectedColors.length < 4) {
       e.target.style.background = selectedBackground
@@ -20,23 +23,19 @@ const Board = () => {
         e.target.style.background,
       ])
     }
-    
   }
 
-  let arrayInfo=compareArray(arrayRandomColors,arraySelectedColors)
-  useEffect(()=>{
-
-    if(arrayInfo[3]!==''){arrayAllInfo.push(arrayInfo)}
+  let arrayInfo = compareArray(arrayRandomColors, arraySelectedColors)
+  useEffect(() => {
+    if (arrayInfo[3] !== '') {
+      arrayAllInfo.push(arrayInfo)
+    }
   })
-  useEffect(()=>{
-    if (arraySelectedColors.length===4)
-    {setArraySelectedColors([])  }
-   
-  },[arraySelectedColors])
-  
-  
-console.log(arrayAllInfo);
-  
+  useEffect(() => {
+    if (arraySelectedColors.length === 4) {
+      setArraySelectedColors([])
+    }
+  }, [arraySelectedColors])
 
   return (
     <div className='board'>
@@ -55,26 +54,23 @@ console.log(arrayAllInfo);
           </div>
         )
       })}
-      {/* podgląd */}
-      {/* {arrayRandomColors.map((color, index) =>{
-
-        return  <div
-        key={index}
-        className='item'
-      >
-         <div style={{background:color}} className='circle'></div>
-         </div>
-      })} */}
-      {/* info */}
-      {/* {arrayInfo.map((color, index) =>{
-
-        return  <div
-        key={index}
-        className='item'
-      >
-         <div style={{background:color}} className='circle'></div>
-         </div>
-      })} */}
+      {/* podgląd-------------------------------- */}
+      <div className='wrapper-preview'>
+        {arrayRandomColors.map((color, index) => {
+          return (
+            <div
+              key={index}
+              className='item'
+            >
+              <div
+                style={{ background: color }}
+                className='circle'
+              ></div>
+            </div>
+          )
+        })}
+        {/* -------------------------------------------- */}
+      </div>
     </div>
   )
 }
