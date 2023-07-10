@@ -5,16 +5,16 @@
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
   gap: 0;
 }
-.panel-info .item{
+.panel-info .item {
   height: 75px;
   width: 75px;
   display: grid;
-  grid-template-columns: repeat(2,1fr);
-  grid-template-rows: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   place-items: center;
   background-color: var(--grey-light);
 }
-.panel-info .circle{
+.panel-info .circle {
   width: 15px;
   height: 15px;
   border-radius: 50%;

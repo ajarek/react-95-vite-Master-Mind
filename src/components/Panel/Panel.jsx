@@ -3,7 +3,7 @@ import { AppContext } from '../../App'
 import './Panel.css'
 
 const Panel = () => {
-  const { selectedBackground, setSelectedBackground } = useContext(AppContext)
+  const { setSelectedBackground } = useContext(AppContext)
   return (
     <div className='panel'>
       <div className='item item-panel'>

@@ -1,6 +1,6 @@
 import { React, useContext, useEffect, useState } from 'react'
 import { AppContext } from '../../App'
-import _ from 'lodash';
+import _ from 'lodash'
 import { ColorRandom } from '../../helper/ColorRandom'
 import { compareArray } from '../../helper/compareArray'
 import './Board.css'
@@ -8,10 +8,9 @@ const array = new Array(32).fill('')
 const Board = () => {
   const {
     selectedBackground,
-    setSelectedBackground,
     arrayAllInfo,
-    setArrayAllInfo,
-    counter, setCounter
+    counter,
+    setCounter,
   } = useContext(AppContext)
   const [arraySelectedColors, setArraySelectedColors] = useState([])
   const [arrayRandomColors, setArrayRandomColors] = useState(ColorRandom())
@@ -31,7 +30,7 @@ const Board = () => {
     if (arrayInfo[3] !== '') {
       arrayAllInfo.push(arrayInfo)
     }
-    if ( _.isEqual(arrayInfo,['black','black','black','black'])===true) {
+    if (_.isEqual(arrayInfo, ['black', 'black', 'black', 'black']) === true) {
       alert('You guessed')
     }
   })
@@ -42,7 +41,7 @@ const Board = () => {
   }, [arraySelectedColors])
   useEffect(() => {
     if (arraySelectedColors.length === 4) {
-    setCounter(counter+1)
+      setCounter(counter + 1)
     }
   })
 
@@ -63,7 +62,7 @@ const Board = () => {
           </div>
         )
       })}
-      {/* podgląd-------------------------------- */}
+      {/*✂️preview-------------------------------- */}
       <div className='wrapper-preview'>
         {arrayRandomColors.map((color, index) => {
           return (

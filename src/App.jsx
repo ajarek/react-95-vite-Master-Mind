@@ -9,12 +9,22 @@ function App() {
   const [counter, setCounter] = useState(0)
 
   return (
-    <div style={{display:'flex', justifyContent:'space-evenly', width:'100%'}}>
-        <AppContext.Provider
-        value={{selectedBackground, setSelectedBackground, arrayAllInfo, setArrayAllInfo,counter, setCounter}}>
-      <Board/>
-      <PanelInfo/>
-      <Panel/>
+    <div
+      style={{ display: 'flex', justifyContent: 'space-evenly', width: '100%' }}
+    >
+      <AppContext.Provider
+        value={{
+          selectedBackground,
+          setSelectedBackground,
+          arrayAllInfo,
+          setArrayAllInfo,
+          counter,
+          setCounter,
+        }}
+      >
+        <Board />
+        <PanelInfo />
+        <Panel />
       </AppContext.Provider>
     </div>
   )

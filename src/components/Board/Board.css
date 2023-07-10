@@ -1,21 +1,21 @@
-.board{
+.board {
   width: 300px;
   height: 600px;
   background-color: var(--braun);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  grid-template-rows: repeat(8,1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(8, 1fr);
 }
-.item{
+.item {
   background: var(--braun);
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid var(--black);
 }
-.circle{
+.circle {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -23,8 +23,8 @@
   box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.8);
   cursor: pointer;
 }
-.wrapper-preview{
+.wrapper-preview {
   position: absolute;
-  right:10%;
+  right: 10%;
   display: flex;
 }

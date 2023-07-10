@@ -1,15 +1,9 @@
-import { React, useContext, useEffect, useState } from 'react'
+import { React, useContext } from 'react'
 import { AppContext } from '../../App'
 import './PanelInfo.css'
 
 const PanelInfo = () => {
-  const {
-    selectedBackground,
-    setSelectedBackground,
-    arrayAllInfo,
-    setArrayAllInfo,
-    counter, setCounter
-  } = useContext(AppContext)
+  const { arrayAllInfo, counter } = useContext(AppContext)
   return (
     <div className='panel-info'>
       <div className='item'>
